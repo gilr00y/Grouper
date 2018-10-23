@@ -76,6 +76,9 @@ class GrouperStep(smi: StepMeta, sdi: StepDataInterface, copyNr: Int, transMeta:
 class GrouperStepMeta extends BaseStepMeta with StepMetaInterface {
   override def excludeFromRowLayoutVerification: Boolean = { true }//super.excludeFromRowLayoutVerification()
 
+  def getGroupFields: List[String] = {
+    List("a", "b")
+  }
   def getStep(smi: StepMeta, sdi: StepDataInterface, copyNr: Int, transMeta: TransMeta, trans: Trans) =
     new GrouperStep(smi, sdi, copyNr, transMeta, trans)
 
